@@ -5,11 +5,14 @@ metadata:
   labels:
     app: my-microservice
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 80
     targetPort: 3000
     protocol: TCP
     name: http
+    nodePort: 30007   # optional (or remove to auto assign)
   selector:
     app: my-microservice
+
+
